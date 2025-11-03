@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
+import TourCalculator from "@/components/TourCalculator";
 
 export default function Index() {
   const services = [
@@ -81,6 +82,7 @@ export default function Index() {
           <nav className="hidden md:flex gap-8">
             <a href="#services" className="text-sm hover:text-accent transition-colors">Услуги</a>
             <a href="#destinations" className="text-sm hover:text-accent transition-colors">Направления</a>
+            <a href="#calculator" className="text-sm hover:text-accent transition-colors">Калькулятор</a>
             <a href="#cases" className="text-sm hover:text-accent transition-colors">Кейсы</a>
             <a href="#about" className="text-sm hover:text-accent transition-colors">О нас</a>
             <a href="#faq" className="text-sm hover:text-accent transition-colors">FAQ</a>
@@ -361,6 +363,18 @@ export default function Index() {
               </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="calculator" className="py-20 px-4 bg-gradient-to-b from-accent/5 to-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Рассчитайте стоимость тура</h2>
+            <p className="text-xl text-muted-foreground">
+              Узнайте примерную цену вашего путешествия за пару кликов
+            </p>
+          </div>
+          <TourCalculator />
         </div>
       </section>
 
