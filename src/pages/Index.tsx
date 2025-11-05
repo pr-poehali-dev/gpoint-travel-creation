@@ -261,64 +261,6 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-accent/5">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
-              <span className="text-accent font-semibold">ПРЕМИАЛЬНОЕ ОБСЛУЖИВАНИЕ</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Сервис G.Point.Travel — это премиальное обслуживание для каждого гостя
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Мы берем на себя все заботы: от поиска идеального отеля до решения непредвиденных ситуаций во время путешествия
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <img 
-              src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/5e7f9b60-3719-4363-91bb-e20ff32b2494.jpg" 
-              alt="Premium Service" 
-              className="rounded-2xl shadow-xl w-full"
-            />
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Icon name="Globe" className="text-accent" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Эксклюзивные направления</h3>
-                  <p className="text-muted-foreground">
-                    Доступ к закрытым отелям и локациям, недоступным для массового туризма
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Icon name="Users" className="text-accent" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">VIP-сопровождение</h3>
-                  <p className="text-muted-foreground">
-                    Личный консьерж, встреча в аэропорту и приоритетный сервис на каждом этапе
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Icon name="BadgeCheck" className="text-accent" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Гарантия лучшей цены</h3>
-                  <p className="text-muted-foreground">
-                    Прямые контракты с отелями и авиакомпаниями — цены ниже, чем у конкурентов
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="services" className="py-20 px-4 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-16">
