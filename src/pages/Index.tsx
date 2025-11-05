@@ -1,13 +1,10 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 import TourCalculator from "@/components/TourCalculator";
-import ContactModal from "@/components/ContactModal";
 
 export default function Index() {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const services = [
     {
       icon: "Plane",
@@ -109,11 +106,7 @@ export default function Index() {
                 Премиум турагентство G.Point.Travel организует индивидуальные туры и бронирование отелей с полным сопровождением 24/7
               </p>
               <div className="flex gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-primary animate-pulse-glow"
-                  onClick={() => setIsContactModalOpen(true)}
-                >
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary">
                   <Icon name="Send" size={20} className="mr-2" />
                   Начать путешествие
                 </Button>
@@ -417,14 +410,6 @@ export default function Index() {
             Свяжитесь с нами сегодня, и наш менеджер подберет идеальный тур специально для вас
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-accent hover:bg-accent/90 text-primary animate-pulse-glow"
-              onClick={() => setIsContactModalOpen(true)}
-            >
-              <Icon name="Send" size={20} className="mr-2" />
-              Начать путешествие
-            </Button>
             <div className="flex items-center gap-2 text-lg">
               <Icon name="Phone" className="text-accent" size={24} />
               <span className="font-semibold">+7 (999) 123-45-67</span>
@@ -434,10 +419,14 @@ export default function Index() {
               <span className="font-semibold">info@gpoint.travel</span>
             </div>
           </div>
+          <div className="mt-8">
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary text-lg px-8">
+              <Icon name="MessageCircle" size={20} className="mr-2" />
+              Написать в WhatsApp
+            </Button>
+          </div>
         </div>
       </section>
-
-      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
 
       <footer className="bg-primary text-white py-12 px-4">
         <div className="container mx-auto">
