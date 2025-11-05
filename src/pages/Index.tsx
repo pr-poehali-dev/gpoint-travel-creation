@@ -199,68 +199,6 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-primary/5">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
-              <span className="text-accent font-semibold">VIP-УСЛУГИ</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-              Премиальный сервис на каждом шаге
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Индивидуальные VIP-услуги для максимального комфорта вашего путешествия
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-accent/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Plane" className="text-accent" size={32} />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Fast Track</h3>
-                <p className="text-muted-foreground">
-                  Приоритетный проход через контроль в аэропортах без очередей
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-accent/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Car" className="text-accent" size={32} />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Лимузин-сервис</h3>
-                <p className="text-muted-foreground">
-                  Трансферы премиум-класса с личным водителем в любую точку
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-accent/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="UserCheck" className="text-accent" size={32} />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Личный консьерж</h3>
-                <p className="text-muted-foreground">
-                  Персональный помощник 24/7 для решения любых вопросов
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-accent/20">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name="Wine" className="text-accent" size={32} />
-                </div>
-                <h3 className="text-xl font-bold mb-2">VIP-бронирование</h3>
-                <p className="text-muted-foreground">
-                  Столики в лучших ресторанах и билеты на закрытые мероприятия
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 px-4 bg-gradient-to-b from-white to-accent/5">
         <div className="container mx-auto">
           <div className="text-center mb-16">
