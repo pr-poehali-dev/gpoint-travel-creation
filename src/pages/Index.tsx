@@ -170,10 +170,10 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-8">
-                <Icon name="Award" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Экспертность</h3>
+                <Icon name="Sparkles" size={48} className="text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-3 text-white">Индивидуальность</h3>
                 <p className="text-white/80">
-                  Более 10 лет опыта в организации премиальных путешествий по всему миру
+                  Каждый маршрут создается персонально под ваши предпочтения и пожелания
                 </p>
               </CardContent>
             </Card>
