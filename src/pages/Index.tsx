@@ -106,7 +106,11 @@ export default function Index() {
                 Премиум турагентство G.Point.Travel организует индивидуальные туры и бронирование отелей с полным сопровождением 24/7
               </p>
               <div className="flex gap-4">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary">
+                <Button 
+                  size="lg" 
+                  className="bg-accent hover:bg-accent/90 text-primary animate-pulse-glow"
+                  onClick={() => window.open('https://t.me/GPointTravel', '_blank')}
+                >
                   <Icon name="Send" size={20} className="mr-2" />
                   Начать путешествие
                 </Button>
@@ -410,6 +414,14 @@ export default function Index() {
             Свяжитесь с нами сегодня, и наш менеджер подберет идеальный тур специально для вас
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              className="bg-accent hover:bg-accent/90 text-primary animate-pulse-glow"
+              onClick={() => window.open('https://t.me/GPointTravel', '_blank')}
+            >
+              <Icon name="Send" size={20} className="mr-2" />
+              Начать путешествие
+            </Button>
             <div className="flex items-center gap-2 text-lg">
               <Icon name="Phone" className="text-accent" size={24} />
               <span className="font-semibold">+7 (999) 123-45-67</span>
