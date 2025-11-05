@@ -32,12 +32,36 @@ export default function Index() {
   ];
 
   const destinations = [
-    { name: "Мальдивы", description: "Райские острова с бирюзовой водой" },
-    { name: "Европа", description: "Культурные столицы и горнолыжные курорты" },
-    { name: "ОАЭ", description: "Роскошь и современность Востока" },
-    { name: "Азия", description: "Экзотика и древние традиции" },
-    { name: "Карибы", description: "Белоснежные пляжи и тропический рай" },
-    { name: "США", description: "Деловые поездки и туризм класса люкс" }
+    { 
+      name: "Россия", 
+      description: "От исторических городов до природных чудес — откройте красоту родной страны", 
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/07e783d2-d0cd-4d22-b9e1-8a7f02b04473.jpg"
+    },
+    { 
+      name: "Европа", 
+      description: "Культурные столицы, горнолыжные курорты и средиземноморские побережья", 
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/b9395910-0010-477c-96b0-307ee08a9d37.jpg"
+    },
+    { 
+      name: "Азия", 
+      description: "Древние храмы, экзотическая природа и восточное гостеприимство", 
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/c842ec48-0f62-4997-a7b6-7a2d86eeb807.jpg"
+    },
+    { 
+      name: "Мальдивы", 
+      description: "Райские острова с кристальной водой и роскошные виллы на воде", 
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/d5e1e0a2-8acb-4ef8-8dff-6aa9e779756b.jpg"
+    },
+    { 
+      name: "ОАЭ", 
+      description: "Роскошь современного Востока, небоскребы Дубая и арабская культура", 
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/87c4bca4-5204-4f21-8aaf-b95965fb0104.jpg"
+    },
+    { 
+      name: "США", 
+      description: "Мегаполисы, национальные парки и деловой туризм премиум-класса", 
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/53f85314-20b5-4b69-a3f2-717f240d2c5c.jpg"
+    }
   ];
 
   const cases = [
@@ -265,20 +289,20 @@ export default function Index() {
               Организуем путешествия по всему миру
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {destinations.map((dest, index) => (
-              <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all">
+              <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all border-2 border-transparent hover:border-accent/30">
                 <CardContent className="p-0">
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden h-96">
                     <img 
-                      src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/53325d44-574b-41f9-9164-16cece08a699.jpg" 
+                      src={dest.image} 
                       alt={dest.name}
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end">
-                      <div className="p-6 text-white">
-                        <h3 className="text-2xl font-bold mb-1">{dest.name}</h3>
-                        <p className="text-white/90">{dest.description}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex items-end">
+                      <div className="p-8 text-white w-full">
+                        <h3 className="text-3xl font-bold mb-3 text-accent">{dest.name}</h3>
+                        <p className="text-white/90 text-lg leading-relaxed">{dest.description}</p>
                       </div>
                     </div>
                   </div>
