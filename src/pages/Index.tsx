@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -8,6 +8,47 @@ import ContactModal from "@/components/ContactModal";
 
 export default function Index() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [
+    {
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/07e783d2-d0cd-4d22-b9e1-8a7f02b04473.jpg",
+      location: "Москва",
+      description: "Красная площадь и сердце России"
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/2e0538a6-e170-4369-90ee-6412f9b7bb33.jpg",
+      location: "Санкт-Петербург",
+      description: "Культурная столица с дворцами"
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/53325d44-574b-41f9-9164-16cece08a699.jpg",
+      location: "Сочи",
+      description: "Черноморский курорт круглый год"
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/b9395910-0010-477c-96b0-307ee08a9d37.jpg",
+      location: "Европа",
+      description: "Эйфелева башня и романтика Парижа"
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/c842ec48-0f62-4997-a7b6-7a2d86eeb807.jpg",
+      location: "Азия",
+      description: "Великая Китайская стена"
+    },
+    {
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/d5e1e0a2-8acb-4ef8-8dff-6aa9e779756b.jpg",
+      location: "Мальдивы",
+      description: "Премиум отдых на водных виллах"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [heroSlides.length]);
   const services = [
     {
       icon: "Plane",
@@ -178,20 +219,42 @@ export default function Index() {
             </div>
             <div className="relative animate-scale-in">
               <div className="absolute -inset-4 bg-gradient-to-r from-accent/30 to-primary/30 blur-3xl animate-pulse"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/d5e1e0a2-8acb-4ef8-8dff-6aa9e779756b.jpg" 
-                  alt="Luxury Travel" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6">
-                  <div className="flex items-center gap-3 text-white">
-                    <Icon name="MapPin" className="text-accent" size={24} />
-                    <div>
-                      <div className="font-bold text-lg">Мальдивы</div>
-                      <div className="text-sm text-white/80">Премиум отдых на водных виллах</div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+                {heroSlides.map((slide, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-1000 ${
+                      index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <img 
+                      src={slide.image} 
+                      alt={slide.location} 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/95 to-transparent p-6">
+                      <div className="flex items-center gap-3 text-white">
+                        <Icon name="MapPin" className="text-accent" size={24} />
+                        <div>
+                          <div className="font-bold text-xl">{slide.location}</div>
+                          <div className="text-sm text-white/90">{slide.description}</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                ))}
+                <div className="absolute bottom-6 right-6 flex gap-2 z-10">
+                  {heroSlides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        index === currentSlide 
+                          ? 'bg-accent w-8' 
+                          : 'bg-white/50 hover:bg-white/80'
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
