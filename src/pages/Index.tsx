@@ -170,28 +170,28 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-8">
-                <Icon name="Crown" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Премиум-класс</h3>
+                <Icon name="DollarSign" size={48} className="text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-3 text-white">Выгода</h3>
                 <p className="text-white/80">
-                  Работаем только с проверенными 5-звездочными отелями и VIP-партнерами
+                  Прямые контракты с отелями и партнерами позволяют делать поездки дешевле
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-8">
-                <Icon name="Gem" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Эксклюзивность</h3>
+                <Icon name="Shield" size={48} className="text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-3 text-white">Надежность</h3>
                 <p className="text-white/80">
-                  Доступ к закрытым локациям и специальным предложениям для наших клиентов
+                  Полная поддержка 24/7 на всех этапах — от планирования до возвращения домой
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-8">
-                <Icon name="Zap" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Оперативность</h3>
+                <Icon name="Sparkles" size={48} className="text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-3 text-white">Индивидуальный подход</h3>
                 <p className="text-white/80">
-                  Организация тура за 24 часа и круглосуточная поддержка в любой точке мира
+                  Каждый маршрут создается персонально под ваши предпочтения и пожелания
                 </p>
               </CardContent>
             </Card>
