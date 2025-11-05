@@ -67,15 +67,24 @@ export default function Index() {
   const cases = [
     {
       title: "Свадебное путешествие на Мальдивы",
-      description: "Организация романтической поездки для пары с размещением в премиальном водном бунгало, приватными ужинами и SPA-процедурами"
+      client: "Анна и Сергей",
+      description: "Организовали романтическую поездку мечты с размещением в премиальном водном бунгало. Приватные ужины на закате, SPA-процедуры и подводная фотосессия — каждая деталь была продумана до мелочей.",
+      result: "15 дней незабываемого медового месяца",
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/79aa5026-656d-439b-8aab-390eabb2eb1a.jpg"
     },
     {
       title: "Деловой тур в Нью-Йорк",
-      description: "Полное сопровождение бизнес-делегации: бронирование отеля, организация встреч, трансферы и культурная программа"
+      client: "Руководитель IT-компании",
+      description: "Полное сопровождение бизнес-делегации из 12 человек: отель в центре Манхэттена, организация встреч с партнерами, премиум-трансферы и культурная программа после переговоров.",
+      result: "5 успешных контрактов заключено",
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/3239faec-7587-43ad-b3a5-9f0a08076cbe.jpg"
     },
     {
       title: "Семейный отдых в Швейцарии",
-      description: "Индивидуальный маршрут для семьи с детьми: горнолыжный курорт, экскурсии и детские развлечения"
+      client: "Семья Михайловых",
+      description: "Разработали индивидуальный маршрут для семьи с двумя детьми: горнолыжный курорт Церматт, детский инструктор, экскурсии по шоколадным фабрикам и поездка на панорамном поезде.",
+      result: "10 дней активного зимнего отдыха",
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/f0a935ca-b845-48ac-9d34-2106f6c0c5f5.jpg"
     }
   ];
 
@@ -313,23 +322,45 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="cases" className="py-20 px-4 bg-white">
+      <section id="cases" className="py-20 px-4 bg-gradient-to-b from-accent/5 to-white">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Реальные кейсы нашей работы</h2>
-            <p className="text-xl text-muted-foreground">
-              Истории успешных путешествий наших клиентов
+            <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
+              <span className="text-accent font-semibold">ИСТОРИИ УСПЕХА</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Реальные путешествия наших клиентов</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Каждая поездка — это уникальная история, которую мы создаем вместе с вами
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
             {cases.map((caseItem, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all">
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-primary">{index + 1}</span>
+              <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all border-2 border-transparent hover:border-accent/30">
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden h-64">
+                    <img 
+                      src={caseItem.image} 
+                      alt={caseItem.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg">
+                        <span className="text-xl font-bold text-primary">{index + 1}</span>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{caseItem.title}</h3>
-                  <p className="text-muted-foreground">{caseItem.description}</p>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Icon name="User" className="text-accent" size={16} />
+                      <span className="text-sm font-semibold text-accent">{caseItem.client}</span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-primary">{caseItem.title}</h3>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">{caseItem.description}</p>
+                    <div className="flex items-center gap-2 pt-4 border-t border-accent/20">
+                      <Icon name="CheckCircle" className="text-accent flex-shrink-0" size={20} />
+                      <span className="text-sm font-semibold text-primary">{caseItem.result}</span>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
