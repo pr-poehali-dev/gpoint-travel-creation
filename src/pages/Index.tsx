@@ -170,10 +170,10 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-8">
-                <Icon name="DollarSign" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Выгода</h3>
+                <Icon name="Sparkles" size={48} className="text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-3 text-white">Индивидуальный подход</h3>
                 <p className="text-white/80">
-                  Прямые контракты с отелями и партнерами позволяют делать поездки дешевле
+                  Каждый маршрут создается персонально под ваши предпочтения и пожелания
                 </p>
               </CardContent>
             </Card>
@@ -188,10 +188,10 @@ export default function Index() {
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-8">
-                <Icon name="Sparkles" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Индивидуальный подход</h3>
+                <Icon name="DollarSign" size={48} className="text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-3 text-white">Выгода</h3>
                 <p className="text-white/80">
-                  Каждый маршрут создается персонально под ваши предпочтения и пожелания
+                  Прямые контракты с отелями и партнерами позволяют делать поездки дешевле
                 </p>
               </CardContent>
             </Card>
