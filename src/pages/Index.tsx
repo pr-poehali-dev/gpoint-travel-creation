@@ -368,6 +368,18 @@ export default function Index() {
         </div>
       </section>
 
+      <section id="calculator" className="py-20 px-4 bg-gradient-to-b from-white to-accent/5">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Рассчитайте стоимость тура</h2>
+            <p className="text-xl text-muted-foreground">
+              Узнайте примерную цену вашего путешествия за пару кликов
+            </p>
+          </div>
+          <TourCalculator />
+        </div>
+      </section>
+
       <section id="about" className="py-20 px-4 bg-gradient-to-br from-primary to-primary/90 text-white">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -425,18 +437,6 @@ export default function Index() {
               </Card>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="calculator" className="py-20 px-4 bg-gradient-to-b from-accent/5 to-white">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Рассчитайте стоимость тура</h2>
-            <p className="text-xl text-muted-foreground">
-              Узнайте примерную цену вашего путешествия за пару кликов
-            </p>
-          </div>
-          <TourCalculator />
         </div>
       </section>
 
