@@ -131,38 +131,112 @@ export default function Index() {
       </header>
 
       <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 -z-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        </div>
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
+            <div className="space-y-8 animate-fade-in">
+              <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-2">
+                <span className="text-accent font-semibold text-sm">✨ ПРЕМИУМ ТУРАГЕНТСТВО</span>
+              </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight">
-                Ваш личный помощник в мире путешествий
+                Путешествуйте без забот с <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">G.Point.Travel</span>
               </h1>
-              <p className="text-xl text-muted-foreground">
-                Премиум турагентство G.Point.Travel организует индивидуальные туры и бронирование отелей с полным сопровождением 24/7
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                Индивидуальные туры по всему миру с полным сопровождением — от идеи до возвращения домой
               </p>
-              <div className="flex gap-4">
+              <div className="grid grid-cols-3 gap-4 py-6">
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-accent mb-1">10+</div>
+                  <div className="text-sm text-muted-foreground">лет опыта</div>
+                </div>
+                <div className="text-center border-x border-accent/20">
+                  <div className="text-3xl md:text-4xl font-bold text-accent mb-1">500+</div>
+                  <div className="text-sm text-muted-foreground">довольных клиентов</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-accent mb-1">50+</div>
+                  <div className="text-sm text-muted-foreground">стран</div>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-primary animate-pulse-glow"
+                  className="bg-accent hover:bg-accent/90 text-primary animate-pulse-glow shadow-xl text-lg px-8"
                   onClick={() => setIsContactModalOpen(true)}
                 >
-                  <Icon name="Send" size={20} className="mr-2" />
+                  <Icon name="Sparkles" size={20} className="mr-2" />
                   Начать путешествие
                 </Button>
-                <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10">
+                <Button size="lg" variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-primary transition-all text-lg px-8">
                   <Icon name="Phone" size={20} className="mr-2" />
-                  Консультация
+                  Бесплатная консультация
                 </Button>
               </div>
             </div>
             <div className="relative animate-scale-in">
-              <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 to-primary/20 blur-3xl -z-10"></div>
-              <img 
-                src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/2e0538a6-e170-4369-90ee-6412f9b7bb33.jpg" 
-                alt="Luxury Travel" 
-                className="rounded-2xl shadow-2xl w-full"
-              />
+              <div className="absolute -inset-4 bg-gradient-to-r from-accent/30 to-primary/30 blur-3xl animate-pulse"></div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/d5e1e0a2-8acb-4ef8-8dff-6aa9e779756b.jpg" 
+                  alt="Luxury Travel" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6">
+                  <div className="flex items-center gap-3 text-white">
+                    <Icon name="MapPin" className="text-accent" size={24} />
+                    <div>
+                      <div className="font-bold text-lg">Мальдивы</div>
+                      <div className="text-sm text-white/80">Премиум отдых на водных виллах</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-white border-b border-accent/10">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
+              <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <Icon name="Shield" className="text-accent" size={24} />
+              </div>
+              <div>
+                <div className="font-bold text-primary">Безопасность</div>
+                <div className="text-sm text-muted-foreground">Проверенные партнёры</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
+              <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <Icon name="Clock" className="text-accent" size={24} />
+              </div>
+              <div>
+                <div className="font-bold text-primary">24/7 поддержка</div>
+                <div className="text-sm text-muted-foreground">Всегда на связи</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
+              <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <Icon name="Sparkles" className="text-accent" size={24} />
+              </div>
+              <div>
+                <div className="font-bold text-primary">Индивидуально</div>
+                <div className="text-sm text-muted-foreground">Только для вас</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
+              <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <Icon name="DollarSign" className="text-accent" size={24} />
+              </div>
+              <div>
+                <div className="font-bold text-primary">Выгодно</div>
+                <div className="text-sm text-muted-foreground">Прямые контракты</div>
+              </div>
             </div>
           </div>
         </div>
