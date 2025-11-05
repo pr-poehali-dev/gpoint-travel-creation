@@ -170,28 +170,90 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-8">
-                <Icon name="Sparkles" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Индивидуальность</h3>
+                <Icon name="Crown" size={48} className="text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-3 text-white">Премиум-класс</h3>
                 <p className="text-white/80">
-                  Каждый маршрут создается персонально под ваши предпочтения и пожелания
+                  Работаем только с проверенными 5-звездочными отелями и VIP-партнерами
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-8">
-                <Icon name="Shield" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Надежность</h3>
+                <Icon name="Gem" size={48} className="text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-3 text-white">Эксклюзивность</h3>
                 <p className="text-white/80">
-                  Полная поддержка 24/7 на всех этапах — от планирования до возвращения домой
+                  Доступ к закрытым локациям и специальным предложениям для наших клиентов
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-8">
-                <Icon name="DollarSign" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Выгода</h3>
+                <Icon name="Zap" size={48} className="text-accent mb-4" />
+                <h3 className="text-2xl font-bold mb-3 text-white">Оперативность</h3>
                 <p className="text-white/80">
-                  Прямые контракты с отелями и партнерами позволяют делать поездки дешевле
+                  Организация тура за 24 часа и круглосуточная поддержка в любой точке мира
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-primary/5">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
+              <span className="text-accent font-semibold">VIP-УСЛУГИ</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+              Премиальный сервис на каждом шаге
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Индивидуальные VIP-услуги для максимального комфорта вашего путешествия
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-accent/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon name="Plane" className="text-accent" size={32} />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Fast Track</h3>
+                <p className="text-muted-foreground">
+                  Приоритетный проход через контроль в аэропортах без очередей
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-accent/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon name="Car" className="text-accent" size={32} />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Лимузин-сервис</h3>
+                <p className="text-muted-foreground">
+                  Трансферы премиум-класса с личным водителем в любую точку
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-accent/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon name="UserCheck" className="text-accent" size={32} />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Личный консьерж</h3>
+                <p className="text-muted-foreground">
+                  Персональный помощник 24/7 для решения любых вопросов
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-accent/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon name="Wine" className="text-accent" size={32} />
+                </div>
+                <h3 className="text-xl font-bold mb-2">VIP-бронирование</h3>
+                <p className="text-muted-foreground">
+                  Столики в лучших ресторанах и билеты на закрытые мероприятия
                 </p>
               </CardContent>
             </Card>
