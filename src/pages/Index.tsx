@@ -243,12 +243,12 @@ export default function Index() {
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Icon name="BadgeCheck" className="text-accent" size={24} />
+                  <Icon name="Clock" className="text-accent" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Гарантия лучшей цены</h3>
+                  <h3 className="text-xl font-bold mb-2">Экономия времени</h3>
                   <p className="text-muted-foreground">
-                    Прямые контракты с отелями и авиакомпаниями — цены ниже, чем у конкурентов
+                    Мы берем на себя все организационные вопросы — вам остается только наслаждаться поездкой
                   </p>
                 </div>
               </div>
