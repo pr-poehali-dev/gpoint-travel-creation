@@ -17,14 +17,14 @@ export default function Index() {
       description: "Красная площадь и сердце России"
     },
     {
-      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/2e0538a6-e170-4369-90ee-6412f9b7bb33.jpg",
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/6f161b6c-4908-42cb-b7e9-e00f8d35500e.jpg",
       location: "Санкт-Петербург",
-      description: "Культурная столица с дворцами"
+      description: "Исаакиевский собор и Медный всадник"
     },
     {
-      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/53325d44-574b-41f9-9164-16cece08a699.jpg",
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/ae1397ef-d997-42f5-8d51-6735e83d8f56.jpg",
       location: "Сочи",
-      description: "Черноморский курорт круглый год"
+      description: "Олимпийский парк и курорт мирового уровня"
     },
     {
       image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/b9395910-0010-477c-96b0-307ee08a9d37.jpg",
@@ -32,9 +32,9 @@ export default function Index() {
       description: "Эйфелева башня и романтика Парижа"
     },
     {
-      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/c842ec48-0f62-4997-a7b6-7a2d86eeb807.jpg",
+      image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/f75da763-5225-4773-a413-e04040055980.jpg",
       location: "Азия",
-      description: "Великая Китайская стена"
+      description: "Небоскребы Шанхая и современный Китай"
     },
     {
       image: "https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/d5e1e0a2-8acb-4ef8-8dff-6aa9e779756b.jpg",
