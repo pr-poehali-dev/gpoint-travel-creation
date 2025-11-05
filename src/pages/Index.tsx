@@ -221,34 +221,34 @@ export default function Index() {
             <div className="space-y-6">
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Icon name="Clock" className="text-accent" size={24} />
+                  <Icon name="Globe" className="text-accent" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">24/7 на связи</h3>
+                  <h3 className="text-xl font-bold mb-2">Эксклюзивные направления</h3>
                   <p className="text-muted-foreground">
-                    Ваш персональный менеджер всегда доступен для решения любых вопросов
+                    Доступ к закрытым отелям и локациям, недоступным для массового туризма
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Icon name="Star" className="text-accent" size={24} />
+                  <Icon name="Users" className="text-accent" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Индивидуальный подход</h3>
+                  <h3 className="text-xl font-bold mb-2">VIP-сопровождение</h3>
                   <p className="text-muted-foreground">
-                    Каждый маршрут создается с учетом ваших пожеланий и предпочтений
+                    Личный консьерж, встреча в аэропорту и приоритетный сервис на каждом этапе
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Icon name="Heart" className="text-accent" size={24} />
+                  <Icon name="BadgeCheck" className="text-accent" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Забота о деталях</h3>
+                  <h3 className="text-xl font-bold mb-2">Гарантия лучшей цены</h3>
                   <p className="text-muted-foreground">
-                    От трансферов до ресторанов — мы продумываем каждую мелочь вашего путешествия
+                    Прямые контракты с отелями и авиакомпаниями — цены ниже, чем у конкурентов
                   </p>
                 </div>
               </div>
