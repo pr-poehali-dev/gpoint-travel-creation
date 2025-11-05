@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import Icon from "@/components/ui/icon";
+import ContactModal from "@/components/ContactModal";
 
 interface TourPrices {
   [key: string]: {
@@ -19,6 +20,7 @@ export default function TourCalculator() {
   const [serviceClass, setServiceClass] = useState<string>("comfort");
   const [persons, setPersons] = useState<number>(2);
   const [days, setDays] = useState<number>(7);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const tourPrices: TourPrices = {
     maldives: { economy: 150000, comfort: 250000, premium: 450000 },
@@ -198,9 +200,13 @@ export default function TourCalculator() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <Button size="lg" className="flex-1 bg-accent hover:bg-accent/90 text-primary text-lg h-14">
+          <Button 
+            size="lg" 
+            className="flex-1 bg-accent hover:bg-accent/90 text-primary text-lg h-14 animate-pulse-glow"
+            onClick={() => setIsContactModalOpen(true)}
+          >
             <Icon name="Send" size={20} className="mr-2" />
-            Забронировать тур
+            Начать путешествие
           </Button>
           <Button size="lg" variant="outline" className="flex-1 border-2 border-accent text-accent hover:bg-accent/10 text-lg h-14">
             <Icon name="Phone" size={20} className="mr-2" />
@@ -212,6 +218,8 @@ export default function TourCalculator() {
           * Цены указаны ориентировочно. Точная стоимость рассчитывается индивидуально и зависит от сезона, выбранного отеля и дополнительных услуг.
         </p>
       </CardContent>
+      
+      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
     </Card>
   );
 }
