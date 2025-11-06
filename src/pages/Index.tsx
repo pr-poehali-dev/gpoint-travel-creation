@@ -188,18 +188,30 @@ export default function Index() {
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Индивидуальные туры по всему миру с полным сопровождением — от идеи до возвращения домой
               </p>
-              <div className="grid grid-cols-3 gap-4 py-6">
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-accent mb-1">10+</div>
-                  <div className="text-sm text-muted-foreground">лет опыта</div>
-                </div>
-                <div className="text-center border-x border-accent/20">
-                  <div className="text-3xl md:text-4xl font-bold text-accent mb-1">500+</div>
-                  <div className="text-sm text-muted-foreground">довольных клиентов</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-accent mb-1">50+</div>
-                  <div className="text-sm text-muted-foreground">стран</div>
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 via-accent/10 to-primary/5 p-8 backdrop-blur border border-accent/20 shadow-lg">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-full blur-3xl"></div>
+                <div className="grid grid-cols-3 gap-6 relative">
+                  <div className="space-y-2">
+                    <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-3">
+                      <Icon name="Award" className="text-accent" size={24} />
+                    </div>
+                    <div className="text-4xl font-bold text-primary">10+</div>
+                    <div className="text-sm text-muted-foreground font-medium">лет создаем путешествия мечты</div>
+                  </div>
+                  <div className="space-y-2 border-x border-accent/20 px-4">
+                    <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-3">
+                      <Icon name="Users" className="text-accent" size={24} />
+                    </div>
+                    <div className="text-4xl font-bold text-primary">500+</div>
+                    <div className="text-sm text-muted-foreground font-medium">счастливых путешественников</div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-3">
+                      <Icon name="Globe" className="text-accent" size={24} />
+                    </div>
+                    <div className="text-4xl font-bold text-primary">50+</div>
+                    <div className="text-sm text-muted-foreground font-medium">стран в нашем портфолио</div>
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
