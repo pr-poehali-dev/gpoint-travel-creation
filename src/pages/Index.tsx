@@ -182,7 +182,7 @@ export default function Index() {
         </div>
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-8 animate-fade-in relative z-10">
               <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-2">
                 <span className="text-accent font-semibold text-sm">✨ ПРЕМИУМ ТУРАГЕНТСТВО</span>
               </div>
@@ -207,7 +207,7 @@ export default function Index() {
                 </Button>
               </div>
             </div>
-            <div className="relative animate-scale-in">
+            <div className="relative animate-scale-in z-0">
               <div className="absolute -inset-4 bg-gradient-to-r from-accent/30 to-primary/30 blur-3xl animate-pulse"></div>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px]">
                 {heroSlides.map((slide, index) => (
