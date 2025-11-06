@@ -14,7 +14,7 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
   };
 
   const handleWhatsApp = () => {
-    const phone = '79939745131';
+    const phone = '79934945131';
     const message = encodeURIComponent('Здравствуйте! Хочу узнать больше о турах');
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
     onOpenChange(false);
@@ -53,7 +53,7 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
         </div>
 
         <div className="text-center text-sm text-muted-foreground pt-2 border-t">
-          <p>+7 993 974 51 31</p>
+          <p>+7 993 494 51 31</p>
         </div>
       </DialogContent>
     </Dialog>
