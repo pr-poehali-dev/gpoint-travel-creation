@@ -75,15 +75,7 @@ export default function Index() {
     setTouchEnd(0);
   };
 
-  const nextSlide = () => {
-    setSlideDirection('left');
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
 
-  const prevSlide = () => {
-    setSlideDirection('right');
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -91,7 +83,7 @@ export default function Index() {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, [heroSlides.length]);
+  }, [heroSlides.length, currentSlide]);
 
   useEffect(() => {
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -323,21 +315,7 @@ export default function Index() {
                   </div>
                   );
                 })}
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all"
-                  aria-label="Previous slide"
-                >
-                  <Icon name="ChevronLeft" size={20} className="text-white" />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all"
-                  aria-label="Next slide"
-                >
-                  <Icon name="ChevronRight" size={20} className="text-white" />
-                </button>
-                <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 flex gap-2 z-10">
+                <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 flex gap-2 z-20">
                   {heroSlides.map((_, index) => (
                     <button
                       key={index}
