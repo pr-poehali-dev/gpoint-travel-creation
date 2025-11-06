@@ -9,13 +9,14 @@ interface ContactModalProps {
 
 export default function ContactModal({ open, onOpenChange }: ContactModalProps) {
   const handleTelegram = () => {
-    window.open('https://t.me/GPointTravel', '_blank');
+    const message = encodeURIComponent('Здравствуйте! Нужна помощь в организации поездки.');
+    window.open(`https://t.me/GPointTravel?text=${message}`, '_blank');
     onOpenChange(false);
   };
 
   const handleWhatsApp = () => {
     const phone = '79934945131';
-    const message = encodeURIComponent('Здравствуйте! Хочу узнать больше о турах');
+    const message = encodeURIComponent('Здравствуйте! Нужна помощь в организации поездки.');
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
     onOpenChange(false);
   };
