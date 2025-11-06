@@ -109,10 +109,6 @@
     overflow-x: hidden;
   }
 
-  section {
-    will-change: transform;
-  }
-
   h1,
   h2,
   h3,
