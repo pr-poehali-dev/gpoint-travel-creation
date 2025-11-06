@@ -188,32 +188,35 @@ export default function Index() {
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Индивидуальные туры по всему миру с полным сопровождением — от идеи до возвращения домой
               </p>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-accent/10 to-transparent border-l-4 border-accent hover:from-accent/20 transition-all">
-                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon name="Plane" className="text-accent" size={20} />
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 p-6 border border-accent/30 shadow-xl">
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/20 rounded-full blur-2xl"></div>
+                <div className="relative space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <Icon name="Check" className="text-primary" size={18} />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-primary text-lg">Путешествия под ключ</div>
+                      <div className="text-muted-foreground">От визы до последнего трансфера — мы организуем всё</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="font-bold text-primary">Авиабилеты по лучшим ценам</div>
-                    <div className="text-sm text-muted-foreground">Прямые контракты с авиакомпаниями</div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <Icon name="Check" className="text-primary" size={18} />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-primary text-lg">Только проверенные партнёры</div>
+                      <div className="text-muted-foreground">Работаем с лучшими отелями и туроператорами мира</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-accent/10 to-transparent border-l-4 border-accent hover:from-accent/20 transition-all">
-                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon name="Hotel" className="text-accent" size={20} />
-                  </div>
-                  <div>
-                    <div className="font-bold text-primary">Эксклюзивные отели</div>
-                    <div className="text-sm text-muted-foreground">Доступ к закрытым бронированиям</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-accent/10 to-transparent border-l-4 border-accent hover:from-accent/20 transition-all">
-                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon name="Headphones" className="text-accent" size={20} />
-                  </div>
-                  <div>
-                    <div className="font-bold text-primary">Поддержка 24/7</div>
-                    <div className="text-sm text-muted-foreground">Личный менеджер на всех этапах</div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <Icon name="Check" className="text-primary" size={18} />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-primary text-lg">Без переплат и скрытых комиссий</div>
+                      <div className="text-muted-foreground">Прозрачное ценообразование на каждом этапе</div>
+                    </div>
                   </div>
                 </div>
               </div>
