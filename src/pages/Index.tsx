@@ -192,7 +192,7 @@ export default function Index() {
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Индивидуальные туры по всему миру с полным сопровождением — от идеи до возвращения домой
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 max-w-xl">
                 <Button 
                   size="lg" 
                   className="bg-accent hover:bg-accent/90 text-primary animate-pulse-glow shadow-xl text-lg px-8"
@@ -201,9 +201,9 @@ export default function Index() {
                   <Icon name="Sparkles" size={20} className="mr-2" />
                   Начать путешествие
                 </Button>
-                <Button size="lg" variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-primary transition-all text-lg px-8">
-                  <Icon name="Phone" size={20} className="mr-2" />
-                  Бесплатная консультация
+                <Button size="lg" variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-primary transition-all text-base px-6">
+                  <Icon name="Phone" size={18} className="mr-2" />
+                  Консультация
                 </Button>
               </div>
             </div>
