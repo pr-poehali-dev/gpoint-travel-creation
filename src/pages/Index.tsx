@@ -638,7 +638,7 @@ export default function Index() {
             </div>
             <div className="flex items-center gap-2 text-lg">
               <Icon name="Mail" className="text-accent" size={24} />
-              <span className="font-semibold">info@gpoint.travel</span>
+              <span className="font-semibold">g.point.travel@yandex.ru</span>
             </div>
           </div>
           <div className="mt-8">
