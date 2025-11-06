@@ -9,6 +9,9 @@ import ContactModal from "@/components/ContactModal";
 export default function Index() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   const heroSlides = [
     {
@@ -42,6 +45,32 @@ export default function Index() {
       description: "Премиум отдых на водных виллах"
     }
   ];
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }
+    if (isRightSwipe) {
+      setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -235,7 +264,13 @@ export default function Index() {
             </div>
             <div className="relative animate-scale-in z-0">
               <div className="absolute -inset-4 bg-gradient-to-r from-accent/30 to-primary/30 blur-3xl animate-pulse"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] md:h-[500px]">
+              <div 
+                ref={sliderRef}
+                className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] md:h-[500px] touch-pan-y"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
                 {heroSlides.map((slide, index) => (
                   <div
                     key={index}
@@ -259,6 +294,20 @@ export default function Index() {
                     </div>
                   </div>
                 ))}
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
+                  className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all"
+                  aria-label="Previous slide"
+                >
+                  <Icon name="ChevronLeft" size={20} className="text-white" />
+                </button>
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
+                  className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all"
+                  aria-label="Next slide"
+                >
+                  <Icon name="ChevronRight" size={20} className="text-white" />
+                </button>
                 <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 flex gap-2 z-10">
                   {heroSlides.map((_, index) => (
                     <button
@@ -269,6 +318,7 @@ export default function Index() {
                           ? 'bg-accent w-8' 
                           : 'bg-white/50 hover:bg-white/80'
                       }`}
+                      aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
                 </div>
