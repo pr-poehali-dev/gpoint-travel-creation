@@ -697,10 +697,7 @@ export default function Index() {
                   <Icon name="Phone" size={16} className="text-accent" />
                   +7 (999) 123-45-67
                 </li>
-                <li className="flex items-center gap-2">
-                  <Icon name="Mail" size={16} className="text-accent" />
-                  info@gpoint.travel
-                </li>
+                <li className="flex items-center gap-2">g.point.travel@yandex.ru</li>
                 <li className="flex items-center gap-2">Санкт-Петербург, Россия</li>
               </ul>
             </div>
