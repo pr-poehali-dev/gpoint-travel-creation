@@ -188,29 +188,32 @@ export default function Index() {
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Индивидуальные туры по всему миру с полным сопровождением — от идеи до возвращения домой
               </p>
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 via-accent/10 to-primary/5 p-8 backdrop-blur border border-accent/20 shadow-lg">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-full blur-3xl"></div>
-                <div className="grid grid-cols-3 gap-6 relative">
-                  <div className="space-y-2">
-                    <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-3">
-                      <Icon name="Award" className="text-accent" size={24} />
-                    </div>
-                    <div className="text-4xl font-bold text-primary">10+</div>
-                    <div className="text-sm text-muted-foreground font-medium">лет создаем путешествия мечты</div>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-accent/10 to-transparent border-l-4 border-accent hover:from-accent/20 transition-all">
+                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="Plane" className="text-accent" size={20} />
                   </div>
-                  <div className="space-y-2 border-x border-accent/20 px-4">
-                    <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-3">
-                      <Icon name="Users" className="text-accent" size={24} />
-                    </div>
-                    <div className="text-4xl font-bold text-primary">500+</div>
-                    <div className="text-sm text-muted-foreground font-medium">счастливых путешественников</div>
+                  <div>
+                    <div className="font-bold text-primary">Авиабилеты по лучшим ценам</div>
+                    <div className="text-sm text-muted-foreground">Прямые контракты с авиакомпаниями</div>
                   </div>
-                  <div className="space-y-2">
-                    <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-3">
-                      <Icon name="Globe" className="text-accent" size={24} />
-                    </div>
-                    <div className="text-4xl font-bold text-primary">50+</div>
-                    <div className="text-sm text-muted-foreground font-medium">стран в нашем портфолио</div>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-accent/10 to-transparent border-l-4 border-accent hover:from-accent/20 transition-all">
+                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="Hotel" className="text-accent" size={20} />
+                  </div>
+                  <div>
+                    <div className="font-bold text-primary">Эксклюзивные отели</div>
+                    <div className="text-sm text-muted-foreground">Доступ к закрытым бронированиям</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-accent/10 to-transparent border-l-4 border-accent hover:from-accent/20 transition-all">
+                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="Headphones" className="text-accent" size={20} />
+                  </div>
+                  <div>
+                    <div className="font-bold text-primary">Поддержка 24/7</div>
+                    <div className="text-sm text-muted-foreground">Личный менеджер на всех этапах</div>
                   </div>
                 </div>
               </div>
