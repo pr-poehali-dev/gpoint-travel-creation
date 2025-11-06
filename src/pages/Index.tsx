@@ -11,6 +11,7 @@ export default function Index() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const heroSlides = [
@@ -62,9 +63,11 @@ export default function Index() {
     const isRightSwipe = distance < -50;
 
     if (isLeftSwipe) {
+      setSlideDirection('left');
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }
     if (isRightSwipe) {
+      setSlideDirection('right');
       setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
     }
 
@@ -72,8 +75,19 @@ export default function Index() {
     setTouchEnd(0);
   };
 
+  const nextSlide = () => {
+    setSlideDirection('left');
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setSlideDirection('right');
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
+      setSlideDirection('left');
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 4000);
     return () => clearInterval(interval);
@@ -271,11 +285,25 @@ export default function Index() {
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
               >
-                {heroSlides.map((slide, index) => (
+                {heroSlides.map((slide, index) => {
+                  const isActive = index === currentSlide;
+                  const isPrev = index === (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+                  const isNext = index === (currentSlide + 1) % heroSlides.length;
+                  
+                  let animationClass = '';
+                  if (isActive) {
+                    animationClass = slideDirection === 'left' ? 'slide-in-right' : slideDirection === 'right' ? 'slide-in-left' : '';
+                  } else if (isPrev && slideDirection === 'right') {
+                    animationClass = 'slide-out-right';
+                  } else if (isNext && slideDirection === 'left') {
+                    animationClass = 'slide-out-left';
+                  }
+
+                  return (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
-                      index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    className={`absolute inset-0 ${
+                      isActive ? 'z-10 opacity-100 ' + animationClass : 'z-0 opacity-0'
                     }`}
                   >
                     <img 
@@ -293,17 +321,18 @@ export default function Index() {
                       </div>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
                 <button
-                  onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
-                  className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all"
+                  onClick={prevSlide}
+                  className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all"
                   aria-label="Previous slide"
                 >
                   <Icon name="ChevronLeft" size={20} className="text-white" />
                 </button>
                 <button
-                  onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-                  className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all"
+                  onClick={nextSlide}
+                  className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 md:p-3 transition-all"
                   aria-label="Next slide"
                 >
                   <Icon name="ChevronRight" size={20} className="text-white" />
