@@ -229,9 +229,8 @@ export default function Index() {
             className="bg-accent hover:bg-accent/90 text-primary text-sm md:text-base px-3 md:px-4"
             onClick={() => window.location.href = 'tel:+79934945131'}
           >
-            <Icon name="Phone" size={16} className="mr-1 md:mr-2" />
-            <span className="hidden sm:inline">Связаться</span>
-            <Icon name="Phone" size={18} className="sm:hidden" />
+            <Icon name="Phone" size={16} className="md:mr-2" />
+            <span className="hidden md:inline">Связаться</span>
           </Button>
         </div>
       </header>
