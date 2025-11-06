@@ -154,7 +154,7 @@ export default function Index() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <img 
-              src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/0e2b01a4-2d67-4b67-ba1d-928e2b331082.jpg" 
+              src="https://cdn.poehali.dev/files/42ee5dc4-387a-4f4c-a99e-966edca06711.jpg" 
               alt="G.Point.Travel Logo" 
               className="w-10 h-10 object-contain"
             />
@@ -632,7 +632,7 @@ export default function Index() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <img 
-                  src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/0e2b01a4-2d67-4b67-ba1d-928e2b331082.jpg" 
+                  src="https://cdn.poehali.dev/files/42ee5dc4-387a-4f4c-a99e-966edca06711.jpg" 
                   alt="G.Point.Travel Logo" 
                   className="w-10 h-10 object-contain"
                 />
