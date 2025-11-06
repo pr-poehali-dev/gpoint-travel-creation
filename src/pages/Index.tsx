@@ -152,13 +152,13 @@ export default function Index() {
     <div className="min-h-screen bg-white">
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <img 
               src="https://cdn.poehali.dev/files/536b8c7e-970e-4397-a8b1-ab8dc8af0f61.jpg" 
               alt="G.Point.Travel Logo" 
-              className="w-12 h-12 object-contain"
+              className="w-10 h-10 md:w-12 md:h-12 object-contain"
             />
-            <span className="text-2xl font-bold text-primary">G.Point.Travel</span>
+            <span className="text-lg md:text-2xl font-bold text-primary">G.Point.Travel</span>
           </div>
           <nav className="hidden md:flex gap-8">
             <a href="#services" className="text-sm hover:text-accent transition-colors">Услуги</a>
@@ -169,16 +169,17 @@ export default function Index() {
             <a href="#faq" className="text-sm hover:text-accent transition-colors">FAQ</a>
           </nav>
           <Button 
-            className="bg-accent hover:bg-accent/90 text-primary"
+            className="bg-accent hover:bg-accent/90 text-primary text-sm md:text-base px-3 md:px-4"
             onClick={() => window.location.href = 'tel:+79934945131'}
           >
-            <Icon name="Phone" size={16} className="mr-2" />
-            Связаться
+            <Icon name="Phone" size={16} className="mr-1 md:mr-2" />
+            <span className="hidden sm:inline">Связаться</span>
+            <Icon name="Phone" size={18} className="sm:hidden" />
           </Button>
         </div>
       </header>
 
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
@@ -189,30 +190,30 @@ export default function Index() {
               <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-2">
                 <span className="text-accent font-semibold text-sm">✨ ПРЕМИУМ ТУРАГЕНТСТВО</span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-primary leading-tight">
                 Путешествуйте без забот с <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">G.Point.Travel</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed">
                 Индивидуальные туры по всему миру с полным сопровождением — от идеи до возвращения домой
               </p>
               <div className="flex flex-col sm:flex-row gap-3 max-w-xl">
                 <Button 
                   size="lg" 
-                  className="bg-accent hover:bg-accent/90 text-primary animate-pulse-glow shadow-xl text-lg px-8"
+                  className="bg-accent hover:bg-accent/90 text-primary animate-pulse-glow shadow-xl text-base md:text-lg px-6 md:px-8 w-full sm:w-auto"
                   onClick={() => setIsContactModalOpen(true)}
                 >
-                  <Icon name="Sparkles" size={20} className="mr-2" />
+                  <Icon name="Sparkles" size={18} className="mr-2" />
                   Начать путешествие
                 </Button>
-                <Button size="lg" variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-primary transition-all text-base px-6">
-                  <Icon name="Phone" size={18} className="mr-2" />
+                <Button size="lg" variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-primary transition-all text-sm md:text-base px-4 md:px-6 w-full sm:w-auto">
+                  <Icon name="Phone" size={16} className="mr-2" />
                   Консультация
                 </Button>
               </div>
             </div>
             <div className="relative animate-scale-in z-0">
               <div className="absolute -inset-4 bg-gradient-to-r from-accent/30 to-primary/30 blur-3xl animate-pulse"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px]">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] md:h-[500px]">
                 {heroSlides.map((slide, index) => (
                   <div
                     key={index}
@@ -225,18 +226,18 @@ export default function Index() {
                       alt={slide.location} 
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/95 to-transparent p-6">
-                      <div className="flex items-center gap-3 text-white">
-                        <Icon name="MapPin" className="text-accent" size={24} />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/95 to-transparent p-4 md:p-6">
+                      <div className="flex items-center gap-2 md:gap-3 text-white">
+                        <Icon name="MapPin" className="text-accent flex-shrink-0" size={20} />
                         <div>
-                          <div className="font-bold text-xl">{slide.location}</div>
-                          <div className="text-sm text-white/90">{slide.description}</div>
+                          <div className="font-bold text-base md:text-xl">{slide.location}</div>
+                          <div className="text-xs md:text-sm text-white/90">{slide.description}</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 ))}
-                <div className="absolute bottom-6 right-6 flex gap-2 z-10">
+                <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 flex gap-2 z-10">
                   {heroSlides.map((_, index) => (
                     <button
                       key={index}
@@ -298,37 +299,37 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-primary text-white">
+      <section className="py-12 md:py-20 px-4 bg-primary text-white">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Почему выбирают G.Point.Travel</h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Почему выбирают G.Point.Travel</h2>
+            <p className="text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto">
               Мы не просто турагентство — мы ваш надежный партнер в каждом путешествии
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
-              <CardContent className="p-8">
-                <Icon name="Sparkles" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Индивидуальный подход</h3>
+              <CardContent className="p-6 md:p-8">
+                <Icon name="Sparkles" size={40} className="text-accent mb-4" />
+                <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">Индивидуальный подход</h3>
                 <p className="text-white/80">
                   Каждый маршрут создается персонально под ваши предпочтения и пожелания
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
-              <CardContent className="p-8">
-                <Icon name="Shield" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Надежность</h3>
+              <CardContent className="p-6 md:p-8">
+                <Icon name="Shield" size={40} className="text-accent mb-4" />
+                <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">Надежность</h3>
                 <p className="text-white/80">
                   Полная поддержка 24/7 на всех этапах — от планирования до возвращения домой
                 </p>
               </CardContent>
             </Card>
             <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
-              <CardContent className="p-8">
-                <Icon name="DollarSign" size={48} className="text-accent mb-4" />
-                <h3 className="text-2xl font-bold mb-3 text-white">Выгода</h3>
+              <CardContent className="p-6 md:p-8">
+                <Icon name="DollarSign" size={40} className="text-accent mb-4" />
+                <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">Выгода</h3>
                 <p className="text-white/80">
                   Прямые контракты с отелями и партнерами позволяют делать поездки дешевле
                 </p>
@@ -338,20 +339,20 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-accent/5">
+      <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-white to-accent/5">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
               <span className="text-accent font-semibold">ПРЕМИАЛЬНОЕ ОБСЛУЖИВАНИЕ</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-primary mb-4">
               Сервис G.Point.Travel — это премиальное обслуживание для каждого гостя
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
               Мы берем на себя все заботы: от поиска идеального отеля до решения непредвиденных ситуаций во время путешествия
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             <img 
               src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/5e7f9b60-3719-4363-91bb-e20ff32b2494.jpg" 
               alt="Premium Service" 
@@ -363,8 +364,8 @@ export default function Index() {
                   <Icon name="Globe" className="text-accent" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Эксклюзивные направления</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-lg md:text-xl font-bold mb-2">Эксклюзивные направления</h3>
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Доступ к закрытым отелям и локациям, недоступным для массового туризма
                   </p>
                 </div>
@@ -374,8 +375,8 @@ export default function Index() {
                   <Icon name="Users" className="text-accent" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">VIP-сопровождение</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-lg md:text-xl font-bold mb-2">VIP-сопровождение</h3>
+                  <p className="text-sm md:text-base text-muted-foreground">
                     Личный консьерж, встреча в аэропорту и приоритетный сервис на каждом этапе
                   </p>
                 </div>
@@ -593,31 +594,31 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-accent/10 to-primary/5">
+      <section className="py-12 md:py-20 px-4 bg-gradient-to-br from-accent/10 to-primary/5">
         <div className="container mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
             Готовы начать путешествие?
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Свяжитесь с нами сегодня, и наш менеджер подберет идеальный тур специально для вас
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="flex items-center gap-2 text-lg">
-              <Icon name="Phone" className="text-accent" size={24} />
-              <span className="font-semibold">+7 (993) 494-51-31</span>
+            <div className="flex items-center gap-2 text-sm md:text-base lg:text-lg">
+              <Icon name="Phone" className="text-accent flex-shrink-0" size={20} />
+              <span className="font-semibold break-all">+7 (993) 494-51-31</span>
             </div>
-            <div className="flex items-center gap-2 text-lg">
-              <Icon name="Mail" className="text-accent" size={24} />
-              <span className="font-semibold">g.point.travel@yandex.ru</span>
+            <div className="flex items-center gap-2 text-sm md:text-base lg:text-lg">
+              <Icon name="Mail" className="text-accent flex-shrink-0" size={20} />
+              <span className="font-semibold break-all">g.point.travel@yandex.ru</span>
             </div>
           </div>
           <div className="mt-8">
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-accent/90 text-primary text-lg px-8 animate-pulse-glow"
+              className="bg-accent hover:bg-accent/90 text-primary text-base md:text-lg px-6 md:px-8 animate-pulse-glow w-full sm:w-auto max-w-sm"
               onClick={() => setIsContactModalOpen(true)}
             >
-              <Icon name="Send" size={20} className="mr-2" />
+              <Icon name="Send" size={18} className="mr-2" />
               Начать путешествие
             </Button>
           </div>
@@ -626,9 +627,9 @@ export default function Index() {
 
       <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
 
-      <footer className="bg-primary text-white py-12 px-4">
+      <footer className="bg-primary text-white py-8 md:py-12 px-4">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <img 
@@ -643,8 +644,8 @@ export default function Index() {
               </p>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Услуги</h3>
-              <ul className="space-y-2 text-white/70">
+              <h3 className="font-bold mb-4 text-base md:text-lg">Услуги</h3>
+              <ul className="space-y-2 text-white/70 text-sm md:text-base">
                 <li><a href="#" className="hover:text-accent transition-colors">Индивидуальные туры</a></li>
                 <li><a href="#" className="hover:text-accent transition-colors">Бронирование отелей</a></li>
                 <li><a href="#" className="hover:text-accent transition-colors">Деловые поездки</a></li>
@@ -652,8 +653,8 @@ export default function Index() {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Компания</h3>
-              <ul className="space-y-2 text-white/70">
+              <h3 className="font-bold mb-4 text-base md:text-lg">Компания</h3>
+              <ul className="space-y-2 text-white/70 text-sm md:text-base">
                 <li><a href="#about" className="hover:text-accent transition-colors">О нас</a></li>
                 <li><a href="#cases" className="hover:text-accent transition-colors">Кейсы</a></li>
                 <li><a href="#faq" className="hover:text-accent transition-colors">FAQ</a></li>
@@ -661,15 +662,15 @@ export default function Index() {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-4">Контакты</h3>
-              <ul className="space-y-2 text-white/70">
-                <li className="flex items-center gap-2">+7 (993) 494-51-31</li>
-                <li className="flex items-center gap-2">g.point.travel@yandex.ru</li>
+              <h3 className="font-bold mb-4 text-base md:text-lg">Контакты</h3>
+              <ul className="space-y-2 text-white/70 text-sm md:text-base">
+                <li className="flex items-center gap-2 break-all">+7 (993) 494-51-31</li>
+                <li className="flex items-center gap-2 break-all">g.point.travel@yandex.ru</li>
                 <li className="flex items-center gap-2">Санкт-Петербург, Россия</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8 text-center text-white/60">
+          <div className="border-t border-white/10 pt-6 md:pt-8 text-center text-white/60 text-sm">
             <p>© 2025 G.Point.Travel. Все права защищены.</p>
           </div>
         </div>

@@ -23,32 +23,32 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md w-[95vw] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-primary text-center">
+          <DialogTitle className="text-xl md:text-2xl font-bold text-primary text-center">
             Выберите удобный способ связи
           </DialogTitle>
-          <DialogDescription className="text-center text-muted-foreground">
+          <DialogDescription className="text-center text-muted-foreground text-sm md:text-base">
             Свяжитесь с нами через любимый мессенджер
           </DialogDescription>
         </DialogHeader>
         
-        <div className="grid gap-4 py-6">
+        <div className="grid gap-4 py-4 md:py-6">
           <Button 
             size="lg" 
-            className="bg-[#0088cc] hover:bg-[#0077b3] text-white h-16 text-lg transition-all hover:scale-105"
+            className="bg-[#0088cc] hover:bg-[#0077b3] text-white h-14 md:h-16 text-base md:text-lg transition-all hover:scale-105 active:scale-95"
             onClick={handleTelegram}
           >
-            <Icon name="Send" size={24} className="mr-3" />
+            <Icon name="Send" size={20} className="mr-2 md:mr-3" />
             Написать в Telegram
           </Button>
           
           <Button 
             size="lg" 
-            className="bg-[#25D366] hover:bg-[#20BA5A] text-white h-16 text-lg transition-all hover:scale-105"
+            className="bg-[#25D366] hover:bg-[#20BA5A] text-white h-14 md:h-16 text-base md:text-lg transition-all hover:scale-105 active:scale-95"
             onClick={handleWhatsApp}
           >
-            <Icon name="MessageCircle" size={24} className="mr-3" />
+            <Icon name="MessageCircle" size={20} className="mr-2 md:mr-3" />
             Написать в WhatsApp
           </Button>
         </div>

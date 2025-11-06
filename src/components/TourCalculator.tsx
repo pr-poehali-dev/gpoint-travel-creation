@@ -59,13 +59,13 @@ export default function TourCalculator() {
   return (
     <Card className="w-full max-w-4xl mx-auto shadow-2xl border-2 border-accent/20">
       <CardHeader className="bg-gradient-to-r from-primary to-primary/90 text-white rounded-t-lg">
-        <CardTitle className="text-3xl flex items-center gap-3">
-          <Icon name="Calculator" size={32} className="text-accent" />
+        <CardTitle className="text-2xl md:text-3xl flex items-center gap-2 md:gap-3">
+          <Icon name="Calculator" size={28} className="text-accent flex-shrink-0" />
           Калькулятор стоимости тура
         </CardTitle>
-        <p className="text-white/80 mt-2">Рассчитайте примерную стоимость вашего путешествия</p>
+        <p className="text-white/80 mt-2 text-sm md:text-base">Рассчитайте примерную стоимость вашего путешествия</p>
       </CardHeader>
-      <CardContent className="p-8 space-y-8">
+      <CardContent className="p-4 md:p-8 space-y-6 md:space-y-8">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-3">
             <Label className="text-lg font-semibold">Направление</Label>
@@ -166,16 +166,16 @@ export default function TourCalculator() {
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-white/80 text-sm mb-1">Общая стоимость</p>
-                <p className="text-4xl md:text-5xl font-bold text-accent">
+                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent break-words">
                   {formatPrice(totalPrice)} ₽
                 </p>
               </div>
               <Icon name="Sparkles" className="text-accent" size={40} />
             </div>
             
-            <div className="flex justify-between items-center pt-4 border-t border-white/20">
-              <span className="text-white/80">Стоимость на человека:</span>
-              <span className="text-2xl font-bold text-white">{formatPrice(pricePerPerson)} ₽</span>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pt-4 border-t border-white/20">
+              <span className="text-white/80 text-sm md:text-base">Стоимость на человека:</span>
+              <span className="text-xl md:text-2xl font-bold text-white break-words">{formatPrice(pricePerPerson)} ₽</span>
             </div>
 
             <div className="pt-4 space-y-2">
