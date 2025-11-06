@@ -701,10 +701,7 @@ export default function Index() {
                   <Icon name="Mail" size={16} className="text-accent" />
                   info@gpoint.travel
                 </li>
-                <li className="flex items-center gap-2">
-                  <Icon name="MapPin" size={16} className="text-accent" />
-                  Москва, Россия
-                </li>
+                <li className="flex items-center gap-2">Санкт-Петербург, Россия</li>
               </ul>
             </div>
           </div>
