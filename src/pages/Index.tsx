@@ -168,7 +168,10 @@ export default function Index() {
             <a href="#about" className="text-sm hover:text-accent transition-colors">О нас</a>
             <a href="#faq" className="text-sm hover:text-accent transition-colors">FAQ</a>
           </nav>
-          <Button className="bg-accent hover:bg-accent/90 text-primary">
+          <Button 
+            className="bg-accent hover:bg-accent/90 text-primary"
+            onClick={() => window.location.href = 'tel:+79934945131'}
+          >
             <Icon name="Phone" size={16} className="mr-2" />
             Связаться
           </Button>
