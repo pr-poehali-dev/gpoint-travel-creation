@@ -670,7 +670,7 @@ export default function Index() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-white/60">
-            <p>© 2024 G.Point.Travel. Все права защищены.</p>
+            <p>© 2025 G.Point.Travel. Все права защищены.</p>
           </div>
         </div>
       </footer>
