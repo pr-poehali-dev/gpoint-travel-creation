@@ -660,10 +660,7 @@ export default function Index() {
             <div>
               <h3 className="font-bold mb-4">Контакты</h3>
               <ul className="space-y-2 text-white/70">
-                <li className="flex items-center gap-2">
-                  <Icon name="Phone" size={16} className="text-accent" />
-                  +7 (999) 123-45-67
-                </li>
+                <li className="flex items-center gap-2">+7 (993) 494-51-31</li>
                 <li className="flex items-center gap-2">g.point.travel@yandex.ru</li>
                 <li className="flex items-center gap-2">Санкт-Петербург, Россия</li>
               </ul>
