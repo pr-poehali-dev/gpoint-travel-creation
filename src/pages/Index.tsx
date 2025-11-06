@@ -152,8 +152,12 @@ export default function Index() {
     <div className="min-h-screen bg-white">
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Icon name="Compass" className="text-accent" size={32} />
+          <div className="flex items-center gap-3">
+            <img 
+              src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/0e2b01a4-2d67-4b67-ba1d-928e2b331082.jpg" 
+              alt="G.Point.Travel Logo" 
+              className="w-10 h-10 object-contain"
+            />
             <span className="text-2xl font-bold text-primary">G.Point.Travel</span>
           </div>
           <nav className="hidden md:flex gap-8">
@@ -656,8 +660,12 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Icon name="Compass" className="text-accent" size={32} />
+              <div className="flex items-center gap-3 mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/0e2b01a4-2d67-4b67-ba1d-928e2b331082.jpg" 
+                  alt="G.Point.Travel Logo" 
+                  className="w-10 h-10 object-contain"
+                />
                 <span className="text-xl font-bold">G.Point.Travel</span>
               </div>
               <p className="text-white/70">
