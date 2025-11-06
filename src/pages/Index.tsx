@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -49,6 +49,28 @@ export default function Index() {
     }, 4000);
     return () => clearInterval(interval);
   }, [heroSlides.length]);
+
+  useEffect(() => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    const elements = document.querySelectorAll('.scroll-animate');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
   const services = [
     {
       icon: "Plane",
@@ -259,7 +281,7 @@ export default function Index() {
       <section className="py-16 px-4 bg-white border-b border-accent/10">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-4 gap-6">
-            <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
+            <div className="scroll-animate flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
               <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
                 <Icon name="Shield" className="text-accent" size={24} />
               </div>
@@ -268,7 +290,7 @@ export default function Index() {
                 <div className="text-sm text-muted-foreground">Проверенные партнёры</div>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
+            <div className="scroll-animate flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
               <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
                 <Icon name="Clock" className="text-accent" size={24} />
               </div>
@@ -277,7 +299,7 @@ export default function Index() {
                 <div className="text-sm text-muted-foreground">Всегда на связи</div>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
+            <div className="scroll-animate flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
               <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
                 <Icon name="Sparkles" className="text-accent" size={24} />
               </div>
@@ -286,7 +308,7 @@ export default function Index() {
                 <div className="text-sm text-muted-foreground">Только для вас</div>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
+            <div className="scroll-animate flex items-center gap-4 p-4 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all">
               <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
                 <Icon name="DollarSign" className="text-accent" size={24} />
               </div>
@@ -301,14 +323,14 @@ export default function Index() {
 
       <section className="py-12 md:py-20 px-4 bg-primary text-white">
         <div className="container mx-auto">
-          <div className="text-center mb-12 md:mb-16">
+          <div className="scroll-animate text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Почему выбирают G.Point.Travel</h2>
             <p className="text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto">
               Мы не просто турагентство — мы ваш надежный партнер в каждом путешествии
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
+            <Card className="scroll-animate bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-6 md:p-8">
                 <Icon name="Sparkles" size={40} className="text-accent mb-4" />
                 <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">Индивидуальный подход</h3>
@@ -317,7 +339,7 @@ export default function Index() {
                 </p>
               </CardContent>
             </Card>
-            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
+            <Card className="scroll-animate bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-6 md:p-8">
                 <Icon name="Shield" size={40} className="text-accent mb-4" />
                 <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">Надежность</h3>
@@ -326,7 +348,7 @@ export default function Index() {
                 </p>
               </CardContent>
             </Card>
-            <Card className="bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
+            <Card className="scroll-animate bg-white/10 backdrop-blur border-white/20 hover:bg-white/15 transition-all">
               <CardContent className="p-6 md:p-8">
                 <Icon name="DollarSign" size={40} className="text-accent mb-4" />
                 <h3 className="text-xl md:text-2xl font-bold mb-3 text-white">Выгода</h3>
@@ -341,7 +363,7 @@ export default function Index() {
 
       <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-white to-accent/5">
         <div className="container mx-auto">
-          <div className="text-center mb-12 md:mb-16">
+          <div className="scroll-animate text-center mb-12 md:mb-16">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
               <span className="text-accent font-semibold">ПРЕМИАЛЬНОЕ ОБСЛУЖИВАНИЕ</span>
             </div>
@@ -356,9 +378,9 @@ export default function Index() {
             <img 
               src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/5e7f9b60-3719-4363-91bb-e20ff32b2494.jpg" 
               alt="Premium Service" 
-              className="rounded-2xl shadow-xl w-full"
+              className="scroll-animate rounded-2xl shadow-xl w-full"
             />
-            <div className="space-y-6">
+            <div className="scroll-animate space-y-6">
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
                   <Icon name="Globe" className="text-accent" size={24} />
@@ -399,7 +421,7 @@ export default function Index() {
 
       <section id="services" className="py-20 px-4 bg-white">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className="scroll-animate text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Наши услуги</h2>
             <p className="text-xl text-muted-foreground">
               Полный спектр услуг для комфортного путешествия
@@ -407,7 +429,7 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-accent/20">
+              <Card key={index} className="scroll-animate hover:shadow-xl transition-all hover:-translate-y-2 border-2 border-transparent hover:border-accent/20">
                 <CardContent className="p-6 text-center">
                   <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Icon name={service.icon as any} className="text-accent" size={32} />
@@ -423,7 +445,7 @@ export default function Index() {
 
       <section id="destinations" className="py-20 px-4 bg-accent/5">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className="scroll-animate text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Популярные направления</h2>
             <p className="text-xl text-muted-foreground">
               Организуем путешествия по всему миру
@@ -431,7 +453,7 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {destinations.map((dest, index) => (
-              <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all border-2 border-transparent hover:border-accent/30">
+              <Card key={index} className="scroll-animate group overflow-hidden hover:shadow-2xl transition-all border-2 border-transparent hover:border-accent/30">
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden h-96">
                     <img 
@@ -455,7 +477,7 @@ export default function Index() {
 
       <section id="cases" className="py-20 px-4 bg-gradient-to-b from-accent/5 to-white">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className="scroll-animate text-center mb-16">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
               <span className="text-accent font-semibold">ИСТОРИИ УСПЕХА</span>
             </div>
@@ -466,7 +488,7 @@ export default function Index() {
           </div>
           <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
             {cases.map((caseItem, index) => (
-              <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all border-2 border-transparent hover:border-accent/30">
+              <Card key={index} className="scroll-animate group overflow-hidden hover:shadow-2xl transition-all border-2 border-transparent hover:border-accent/30">
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden h-64">
                     <img 
@@ -501,20 +523,22 @@ export default function Index() {
 
       <section id="calculator" className="py-20 px-4 bg-gradient-to-b from-white to-accent/5">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
+          <div className="scroll-animate text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Рассчитайте стоимость тура</h2>
             <p className="text-xl text-muted-foreground">
               Узнайте примерную цену вашего путешествия за пару кликов
             </p>
           </div>
-          <TourCalculator />
+          <div className="scroll-animate">
+            <TourCalculator />
+          </div>
         </div>
       </section>
 
       <section id="about" className="py-20 px-4 bg-gradient-to-br from-primary to-primary/90 text-white">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="scroll-animate">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">О компании G.Point.Travel</h2>
               <p className="text-xl text-white/90 mb-6">
                 Мы — команда профессионалов с многолетним опытом в индустрии туризма. Наша миссия — сделать каждое путешествие незабываемым, комфортным и доступным.
@@ -537,7 +561,7 @@ export default function Index() {
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="scroll-animate relative">
               <div className="absolute -inset-4 bg-accent/20 blur-3xl"></div>
               <Card className="bg-white/10 backdrop-blur border-white/20">
                 <CardContent className="p-8">
@@ -573,7 +597,7 @@ export default function Index() {
 
       <section id="faq" className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-3xl">
-          <div className="text-center mb-16">
+          <div className="scroll-animate text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Вопросы и ответы</h2>
             <p className="text-xl text-muted-foreground">
               Ответы на часто задаваемые вопросы
@@ -581,7 +605,7 @@ export default function Index() {
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border border-gray-200 rounded-lg px-6">
+              <AccordionItem key={index} value={`item-${index}`} className="scroll-animate border border-gray-200 rounded-lg px-6">
                 <AccordionTrigger className="text-lg font-semibold hover:text-accent">
                   {faq.question}
                 </AccordionTrigger>
@@ -596,7 +620,7 @@ export default function Index() {
 
       <section className="py-12 md:py-20 px-4 bg-gradient-to-br from-accent/10 to-primary/5">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+          <h2 className="scroll-animate text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
             Готовы начать путешествие?
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
