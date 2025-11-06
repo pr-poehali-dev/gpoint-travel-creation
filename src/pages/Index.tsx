@@ -188,34 +188,35 @@ export default function Index() {
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Индивидуальные туры по всему миру с полным сопровождением — от идеи до возвращения домой
               </p>
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 p-6 border border-accent/30 shadow-xl">
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/20 rounded-full blur-2xl"></div>
-                <div className="relative space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                      <Icon name="Check" className="text-primary" size={18} />
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-accent/10 to-primary/5 p-8 border-2 border-accent/40 shadow-2xl backdrop-blur-sm">
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/30 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+                <div className="relative space-y-5">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/50 backdrop-blur-md border border-accent/20 shadow-lg hover:shadow-xl hover:scale-105 transition-all animate-slide-in-left">
+                    <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent/80 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                      <Icon name="CheckCircle2" className="text-primary" size={22} />
                     </div>
                     <div>
-                      <div className="font-semibold text-primary text-lg">Путешествия под ключ</div>
-                      <div className="text-muted-foreground">От визы до последнего трансфера — мы организуем всё</div>
+                      <div className="font-bold text-primary text-lg mb-1">Путешествия под ключ</div>
+                      <div className="text-muted-foreground leading-relaxed">От визы до последнего трансфера — мы организуем всё</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                      <Icon name="Check" className="text-primary" size={18} />
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/50 backdrop-blur-md border border-accent/20 shadow-lg hover:shadow-xl hover:scale-105 transition-all animate-slide-in-left-delay-1">
+                    <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent/80 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                      <Icon name="Award" className="text-primary" size={22} />
                     </div>
                     <div>
-                      <div className="font-semibold text-primary text-lg">Только проверенные партнёры</div>
-                      <div className="text-muted-foreground">Работаем с лучшими отелями и туроператорами мира</div>
+                      <div className="font-bold text-primary text-lg mb-1">Только проверенные партнёры</div>
+                      <div className="text-muted-foreground leading-relaxed">Работаем с лучшими отелями и туроператорами мира</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                      <Icon name="Check" className="text-primary" size={18} />
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/50 backdrop-blur-md border border-accent/20 shadow-lg hover:shadow-xl hover:scale-105 transition-all animate-slide-in-left-delay-2">
+                    <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent/80 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
+                      <Icon name="ShieldCheck" className="text-primary" size={22} />
                     </div>
                     <div>
-                      <div className="font-semibold text-primary text-lg">Без переплат и скрытых комиссий</div>
-                      <div className="text-muted-foreground">Прозрачное ценообразование на каждом этапе</div>
+                      <div className="font-bold text-primary text-lg mb-1">Без переплат и скрытых комиссий</div>
+                      <div className="text-muted-foreground leading-relaxed">Прозрачное ценообразование на каждом этапе</div>
                     </div>
                   </div>
                 </div>
