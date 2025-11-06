@@ -9,6 +9,7 @@ import ContactModal from "@/components/ContactModal";
 export default function Index() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   const heroSlides = [
     {
@@ -70,6 +71,15 @@ export default function Index() {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   const services = [
     {
@@ -202,7 +212,10 @@ export default function Index() {
       </header>
 
       <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 -z-10"
+          style={{
+            transform: `translateY(${scrollY * 0.5}px)`
+          }}>
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
@@ -247,6 +260,9 @@ export default function Index() {
                       src={slide.image} 
                       alt={slide.location} 
                       className="w-full h-full object-cover"
+                      style={{
+                        transform: `translateY(${scrollY * 0.1}px)`
+                      }}
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/95 to-transparent p-4 md:p-6">
                       <div className="flex items-center gap-2 md:gap-3 text-white">
@@ -375,11 +391,16 @@ export default function Index() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
-            <img 
-              src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/5e7f9b60-3719-4363-91bb-e20ff32b2494.jpg" 
-              alt="Premium Service" 
-              className="scroll-animate rounded-2xl shadow-xl w-full"
-            />
+            <div className="scroll-animate rounded-2xl shadow-xl w-full overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/projects/c34f9502-5541-4bdb-ae0c-1fde58b31779/files/5e7f9b60-3719-4363-91bb-e20ff32b2494.jpg" 
+                alt="Premium Service" 
+                className="w-full h-full object-cover"
+                style={{
+                  transform: `translateY(${scrollY * 0.05}px)`
+                }}
+              />
+            </div>
             <div className="scroll-animate space-y-6">
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
@@ -460,6 +481,9 @@ export default function Index() {
                       src={dest.image} 
                       alt={dest.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      style={{
+                        transform: `translateY(${scrollY * 0.03}px) scale(${1 + (scrollY * 0.00005)})`
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex items-end">
                       <div className="p-8 text-white w-full">
@@ -495,6 +519,9 @@ export default function Index() {
                       src={caseItem.image} 
                       alt={caseItem.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      style={{
+                        transform: `translateY(${scrollY * 0.02}px)`
+                      }}
                     />
                     <div className="absolute top-4 left-4">
                       <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg">
