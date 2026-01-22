@@ -740,7 +740,7 @@ export default function Index() {
                 <li><a href="#about" className="hover:text-accent transition-colors">О нас</a></li>
                 <li><a href="#cases" className="hover:text-accent transition-colors">Кейсы</a></li>
                 <li><a href="#faq" className="hover:text-accent transition-colors">FAQ</a></li>
-                <li><a href="#" className="hover:text-accent transition-colors">Контакты</a></li>
+                <li><a href="/privacy-policy" className="hover:text-accent transition-colors">Политика конфиденциальности</a></li>
               </ul>
             </div>
             <div>
@@ -753,7 +753,10 @@ export default function Index() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-6 md:pt-8 text-center text-white/60 text-sm">
-            <p>© 2025 G.Point.Travel. Все права защищены.</p>
+            <p>© 2026 G.Point.Travel. Все права защищены.</p>
+            <p className="mt-2">
+              <a href="/privacy-policy" className="hover:text-accent transition-colors">Политика конфиденциальности</a>
+            </p>
           </div>
         </div>
       </footer>
