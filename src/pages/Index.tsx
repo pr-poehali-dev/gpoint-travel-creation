@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Icon from "@/components/ui/icon";
 import TourCalculator from "@/components/TourCalculator";
 import ContactModal from "@/components/ContactModal";
+import CookieConsent from "@/components/CookieConsent";
 
 export default function Index() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -706,6 +707,7 @@ export default function Index() {
       </section>
 
       <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
+      <CookieConsent />
 
       <footer className="bg-primary text-white py-8 md:py-12 px-4">
         <div className="container mx-auto">
