@@ -754,9 +754,11 @@ export default function Index() {
           </div>
           <div className="border-t border-white/10 pt-6 md:pt-8 text-center text-white/60 text-sm">
             <p>© 2026 G.Point.Travel. Все права защищены.</p>
-            <p className="mt-2">
+            <div className="mt-2 flex flex-wrap justify-center gap-4">
               <a href="/privacy-policy" className="hover:text-accent transition-colors">Политика конфиденциальности</a>
-            </p>
+              <span>•</span>
+              <a href="/terms-of-service" className="hover:text-accent transition-colors">Пользовательское соглашение</a>
+            </div>
           </div>
         </div>
       </footer>
